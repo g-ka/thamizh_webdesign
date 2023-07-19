@@ -51,8 +51,8 @@ window.addEventListener('wheel', (event) =>
     let mobile_menu_links = document.querySelectorAll('.hidden1');
     mobile_menu_links.forEach(link =>
       {
-        // link.addEventListener('click', () =>
-        // {
+          link.addEventListener('click', () =>
+          {
         //   menu_links.forEach(btn =>
         //     {
         //       if(btn === link)
@@ -65,6 +65,7 @@ window.addEventListener('wheel', (event) =>
         //       }
         //     })
           document.querySelector('header').classList.add('header_adder');
+          });
       });
 
       window.addEventListener('touchstart', () =>
