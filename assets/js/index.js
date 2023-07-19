@@ -51,23 +51,28 @@ window.addEventListener('wheel', (event) =>
     let mobile_menu_links = document.querySelectorAll('.hidden1');
     mobile_menu_links.forEach(link =>
       {
-        link.addEventListener('click', () =>
-        {
-          menu_links.forEach(btn =>
-            {
-              if(btn === link)
-              {
-                btn.classList.add('on_action');
-              }
-              else
-              {
-                btn.classList.remove('on_action');
-              }
-            })
+        // link.addEventListener('click', () =>
+        // {
+        //   menu_links.forEach(btn =>
+        //     {
+        //       if(btn === link)
+        //       {
+        //         btn.classList.add('on_action');
+        //       }
+        //       else
+        //       {
+        //         btn.classList.remove('on_action');
+        //       }
+        //     })
           document.querySelector('header').classList.add('header_adder');
         })
       })
 
+      window.addEventListener('touchstart', () =>
+      {
+        document.querySelector('header').classList.remove('header_adder');
+      });
+        
       document.querySelector('.home_para').addEventListener('click', (e) =>
       {
         e.preventDefault();
