@@ -32,7 +32,7 @@ window.addEventListener('touchmove', () =>
 {
   if(window.pageYOffset >= 73)
   {
-    if(start < end)
+    if(start > end)
     document.querySelector('header').classList.add('header_adder');
     else 
     document.querySelector('header').classList.remove('header_adder');
