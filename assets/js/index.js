@@ -18,22 +18,26 @@ window.addEventListener('wheel', (event) =>
     }
   })
 
-window.addEventListener('touchmove', (event) =>
+let start = 0;
+let end = 0;
+window.addEventListener('touchstart', () =>
+{
+  start = window.pageYOffset;
+});
+window.addEventListener('touchend', () =>
+{
+  end = window.pageYOffset;
+});
+window.addEventListener('touchmove', () =>
+{
+  if(window.pageYOffset >= 73)
   {
-    if(window.pageYOffset >= 73)
-    {
-      if (event.deltaY >= 0) 
-      {
-        //console.log('Scroll down');
-        document.querySelector('header').classList.add('header_adder');
-      }
-      else 
-      {
-        //console.log('Scroll up');
-        document.querySelector('header').classList.remove('header_adder');
-      }
-    }
-  })
+    if(start < end)
+    document.querySelector('header').classList.add('header_adder');
+    else 
+    document.querySelector('header').classList.remove('header_adder');
+  }
+})
 
 // hide nav_bar on dynamic scroll (and) color change of menu option
 
