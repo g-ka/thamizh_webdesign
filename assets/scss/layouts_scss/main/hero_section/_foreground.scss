@@ -1,0 +1,101 @@
+@use "../../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../../abstract_scss/mixins/main_mix/hero_section_mix/foreground_mix" as mix;
+@use "../../../abstract_scss/mixins/media_queries_mix" as mq;
+
+.hero_section{
+
+  &__foreground{
+    
+    @include mq.responsive('xs')
+    {
+      @include gen_mix.flex(null,column,2rem);
+      padding: 1.3rem 1.5rem 2rem 1.5rem;
+    }
+    @include mq.responsive('sm')
+    {
+      @include gen_mix.flex(null,column,2rem);
+      padding: 2rem 1.9rem;
+    }
+    @include mq.responsive('lg')
+    {
+      padding: 3rem 5rem;
+      @include gen_mix.flex(null,row, 1.5rem);
+    }
+    @include mq.responsive('xl')
+    {
+      @include mix.foreground();
+      @include gen_mix.flex(null,row, 1.5rem);
+    }
+
+    //hero_section desc style
+    &__desc{
+      @include gen_mix.flex(null, column, 1rem, null);
+
+      h2{
+        @include gen_mix.font_sw(3rem, 600);
+        @include gen_mix.mouse(null, none);
+        //@include gen_mix.fade(2s);
+
+        span{
+          @include gen_mix.text_gradient();
+        }
+      }
+
+      p{
+        @include gen_mix.color_bgcolor("general_text");
+        //@include gen_mix.fade(2s);
+        @include gen_mix.mouse(null, none);
+      }
+
+      .btns{
+        @include gen_mix.iflex(null, row, 1rem);
+        //@include gen_mix.fade(2s);
+
+        .watch_it_free{
+          @include gen_mix.iflex(null, row, 0.7rem);
+          @include gen_mix.color_bgcolor(null, "primary_light");
+          @include mix.watch();
+
+          p{
+            @include gen_mix.font_ws(600);
+            @include gen_mix.color_bgcolor("general_color");
+          }
+          
+          .bx{
+            @include gen_mix.font_sw(1.25rem);
+          }
+        }
+        .watch_it_free:hover{
+          @include gen_mix.color_bgcolor(null, "primary_hover");     
+        }
+
+        .learn_more{
+          @include gen_mix.color_bgcolor("primary_light", "general_color");
+          @include gen_mix.font_ws(600);
+          @include mix.learn();
+        }
+        .learn_more:hover{
+          @include gen_mix.color_bgcolor("general_color", "primary_light");
+        }
+      }
+    }
+
+    //hero_section image style
+    &__img{
+      img{
+        @include gen_mix.wh(20.5rem);
+        @include mq.responsive('lg')
+        {
+          @include gen_mix.wh(20.5rem);
+        }
+        
+        //@include gen_mix.fade(2s);
+        @include mq.responsive('xs')
+        {
+          @include gen_mix.wh(16rem);
+        }
+      }
+    }
+  }
+  
+}

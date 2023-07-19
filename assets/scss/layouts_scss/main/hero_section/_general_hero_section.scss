@@ -1,0 +1,6 @@
+@use "../../../abstract_scss/mixins/main_mix/hero_section_mix/background_mix" as mix;
+
+.hero_section{
+  @include mix.background();
+  margin-top: 4.542rem;
+}

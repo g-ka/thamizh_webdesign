@@ -1,0 +1,44 @@
+@use "../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../abstract_scss/mixins/footer_mix/footer_mix" as mix;
+@use "../../abstract_scss/variables" as var;
+
+footer{
+  @include gen_mix.flex(center,row,0.75rem);
+  @include gen_mix.color_bgcolor(null,"black");
+  padding: 0.75rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  p{
+    @include gen_mix.color_bgcolor("general_color");
+    @include gen_mix.font_sw(2rem);
+  }
+
+  h3{
+    opacity: 0;
+    width: 0;
+    @include gen_mix.color_bgcolor("general_color");
+    @include gen_mix.font_sw(1.5rem,600);
+    letter-spacing: 0.1rem;
+    transition: all 1s;
+  }
+}
+footer:hover{
+
+  p{
+    @include gen_mix.color_bgcolor("general_color");
+    animation: animation 1s ease-in-out 1;
+  }
+
+  h3{
+    opacity: 1;
+    width: 7.2rem;
+  }
+}
+
+@keyframes animation{
+  0% {transform: skew(0,0);}
+  50% {transform: skew(45deg, 45deg);}
+  51% {transform: skew(-45deg, -45deg);}
+  100% {transform: skew(0,0);}
+}

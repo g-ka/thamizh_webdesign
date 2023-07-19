@@ -1,0 +1,57 @@
+@use "../../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../../abstract_scss/mixins/main_mix/hero_section_mix/background_mix" as mix;
+@use "../../../abstract_scss/mixins/media_queries_mix" as mq;
+
+.hero_section{
+
+  &__background{
+
+    @include gen_mix.fade(5s);
+    
+    @include mq.responsive('xs')
+    {
+      display: none;
+    }
+    @include mq.responsive('sm')
+    {
+      display: none;
+    }
+    @include mq.responsive('xl')
+    {
+      display: inline;
+    }
+
+    .bxl-sass{
+      @include mix.tr(2rem,1rem,5s);
+      @include gen_mix.font_sw(1.2rem);
+    }
+    .bxl-css3{
+      @include mix.tl(1rem,30rem,null,1);
+      @include gen_mix.font_sw(1.3rem);
+    }
+    .bxl-html5{
+      @include mix.br(5rem, 35rem,7s);
+      @include gen_mix.font_sw(1.4rem);
+    }
+    .bxl-c-plus-plus{
+      @include mix.bl(2rem,18rem,null,1);
+      @include gen_mix.font_sw(1.4rem);
+    }
+    .bxl-bootstrap{
+      @include mix.tr(4rem,30rem,null,1);
+      @include gen_mix.font_sw(1.45rem);
+    }
+    .bxl-javascript{
+      @include mix.tl(2rem,5rem,4.5s);
+      @include gen_mix.font_sw(1.3rem);
+    }
+    .bxl-react{
+      @include mix.br(4rem,6rem,10s);
+      @include gen_mix.font_sw(1.7rem);
+    }
+    .bxl-python{
+      @include mix.bl(13rem,5rem,8s);
+      @include gen_mix.font_sw(1.6rem);
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@use "../../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../../abstract_scss/mixins/main_mix/roadmap_section_mix/roadmap_mix" as mix;
+@use "../../../abstract_scss/mixins/media_queries_mix" as mq;
+
+.roadmap_section{
+  @include gen_mix.flex(null,column,1.5rem);
+  @include mix.roadmap();
+
+  &__heading{
+    @include gen_mix.font_sw(2rem, 600);
+    @include mix.heading();
+  }
+
+  &__desc{
+    @include gen_mix.color_bgcolor("general_text");
+    @include gen_mix.font_sw(1.1rem);
+  }
+
+  &__gradient{
+    @include gen_mix.wh(10rem, 0.5rem);
+    @include mix.gradient();
+  }
+
+  &__images{
+    @include gen_mix.flex(null,row,1.5rem);
+    @include mix.images();
+    @include mq.responsive('xs')
+    {
+      @include gen_mix.flex(null,column,1.2rem);
+      margin-top: 2rem;
+    }
+    @include mq.responsive('sm')
+    {
+      @include gen_mix.flex(null,column,1.2rem);
+      margin-top: 2rem;
+    }
+    @include mq.responsive('lg')
+    {
+      @include gen_mix.flex(null,row,1.5rem);
+    }
+
+    .set{
+      @include gen_mix.flex(null);
+      @include mq.responsive('xs')
+      {
+        @include gen_mix.flex(null,column,1rem);
+      }
+      @include mq.responsive('sm')
+      {
+        @include gen_mix.flex(null,column,1rem);
+      }
+      @include mq.responsive('lg')
+      {
+        @include gen_mix.flex(null);
+      }
+      
+      .card{
+        @include gen_mix.flex(null,column,1.25rem);
+        @include mix.card();
+
+        .background{
+          @include gen_mix.wh(7.5rem);
+          @include gen_mix.flex(null,column,1.5rem);
+          @include mix.background();
+    
+          .html_img{
+            @include gen_mix.wh(4rem);
+            @include gen_mix.position(absolute,null,1.6rem,null,null,1.45rem);
+            @include mix.html();
+          }
+          .css_img{
+            @include gen_mix.position(absolute,null,1.7rem,null,null,1.7rem);
+            @include mix.css();
+          }
+          .js_img{
+            @include gen_mix.position(absolute,null,1.3rem,null,null,-0.75rem);
+            @include mix.js();
+          }
+        }
+
+        h3{
+          @include gen_mix.font_ws(600);
+          @include mix.h3();
+        }
+
+        p{
+          @include gen_mix.color_bgcolor("general_text");
+          @include mix.p();
+        }
+      }
+      .arrow{
+        i{
+          @include mix.i();
+        }
+        @include mq.responsive('xs')
+        {
+          transform: rotate(90deg);
+        }
+        @include mq.responsive('sm')
+        {
+          transform: rotate(90deg);
+        }
+        @include mq.responsive('lg')
+        {
+          transform: rotate(0deg);
+        }
+      }
+    } 
+
+    .set:hover{
+      .card{
+        @include gen_mix.color_bgcolor(null,"primary_contrast");
+        @include mix.card_hover();
+        
+        .background{
+          @include mix.background_hover();
+
+          img{
+            @include mix.img_hover();
+          }
+        }
+        h3{
+          @include gen_mix.color_bgcolor("primary_light");
+        }
+        p{
+          @include gen_mix.color_bgcolor("general_color");
+        }
+      }
+      .arrow{
+        i{
+          @include gen_mix.color_bgcolor("primary_light");
+        }
+      }
+    }
+    @include mix.animation();
+  }
+}

@@ -1,0 +1,17 @@
+// .about_section
+@mixin about_section()
+{
+  padding: 6rem 10rem;
+}
+
+// &__img > img
+@mixin img()
+{
+  border-radius: 5rem;
+}
+
+// &__desc > p
+@mixin p()
+{
+  line-height: 1.7;
+}

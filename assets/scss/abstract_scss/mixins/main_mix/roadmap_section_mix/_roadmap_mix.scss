@@ -1,0 +1,126 @@
+@use "../../../variables" as *;
+
+// .roadmap_section
+@mixin roadmap {
+  padding: 3.5rem 4rem;
+}
+
+// .roadmap_section > &__heading
+@mixin heading()
+{
+  text-align: center;
+}
+
+// .roadmap_section > &__gradient
+@mixin gradient()
+{
+  border: none;
+  border-radius: 5rem;
+  background-image: linear-gradient(to right, map-get($theme_colors, "left_gradient"), map-get($theme_colors, "right_gradient"));
+}
+
+// .roadmap_section > &__images
+@mixin images()
+{
+  margin-top: 3rem;
+}
+
+// &__images > .set > .card
+@mixin card()
+{
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+// .card > .background
+@mixin background()
+{
+  border: 0.3rem dotted map-get($theme_colors, "black");
+  border-radius: 10rem;
+  position: relative;
+  transition: all 0.5s;
+}
+
+// .background > .html_img
+@mixin html()
+{
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+
+// .background > .css_img
+@mixin css()
+{
+  filter: grayscale(100%);
+  transition: all 0.5s;
+  width: 3.5rem;
+}
+
+// .background > .js_img
+@mixin js()
+{
+  filter: grayscale(100%);
+  transition: all 0.5s;
+  width: 8.5rem;
+  aspect-ratio: 587/330;
+}
+
+// .card > h3
+@mixin h3()
+{
+  transition: all 0.5s;
+}
+
+// .card > p
+@mixin p()
+{
+  text-align: center;
+}
+
+// .set > .arrow > i
+@mixin i()
+{
+  font-size: 4rem;
+  transition: all 0.5s;
+}
+
+// .set:hover > .card
+@mixin card_hover()
+{
+  padding: 1rem 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  transform: skew(-2deg,-2deg);
+  box-shadow: -1px -1px 0 map-get($theme_colors, "primary_light"),
+                    -2px -2px 0 map-get($theme_colors, "primary_light"),
+                    -3px -3px 0 map-get($theme_colors, "primary_light"),
+                    -4px -4px 0 map-get($theme_colors, "primary_light"),
+                    -5px -5px 0 map-get($theme_colors, "primary_light");
+}
+
+// .set:hover > .card > .background
+@mixin background_hover()
+{
+  border-color: map-get($theme_colors, "primary_light");
+  animation: rotate 4s ease-in-out 1;
+}
+
+// .set:hover > .card > .background > .img
+@mixin img_hover()
+{
+  animation: anti_rotate 4s ease-in-out 1;
+  filter: grayscale(0%);
+}
+
+// .set:hover > animation
+@mixin animation()
+{
+  @keyframes rotate{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+  @keyframes anti_rotate{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+  }
+}

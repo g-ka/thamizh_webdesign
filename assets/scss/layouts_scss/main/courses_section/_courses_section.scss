@@ -1,0 +1,96 @@
+@use "sass:math";
+@use "../../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../../abstract_scss/mixins/main_mix/courses_section_mix/courses_mix" as mix;
+@use "../../../abstract_scss/variables" as *;
+@use "../../../abstract_scss/mixins/media_queries_mix" as mq;
+
+.courses_section{
+  @include gen_mix.flex(center,column,1.5rem);
+  @include gen_mix.color_bgcolor(null,"primary_light");
+  padding: 3rem;
+  @include mq.responsive('xxs')
+  {
+    padding: 3rem 3rem 1.7rem 3rem;
+  }
+
+  &__heading{
+    @include gen_mix.color_bgcolor("general_color");
+    text-align: center;
+  }
+
+  &__desc{
+    @include gen_mix.color_bgcolor("general_color");
+    text-align: center;
+  }
+
+  &__courses{
+    @include gen_mix.flex(null,row,5rem);
+    padding: 2rem 2rem;
+    
+    @include mq.responsive('xxs')
+    {
+      @include gen_mix.flex(null,column,3rem);
+      padding: 0 1.5rem;
+      transform: scale(0.95,0.95);
+    }
+    @include mq.responsive('xs')
+    {
+      @include gen_mix.flex(null,column,3rem);
+    }
+    @include mq.responsive('sm')
+    {
+      @include gen_mix.flex(null,column,10rem);
+      margin-top: 3rem;
+    }
+    @include mq.responsive('lg')
+    {
+      @include gen_mix.flex(null,row,2rem);
+      padding: 2rem 2rem;
+      margin-top: 0;
+    }
+    @include mq.responsive('xl')
+    {
+      @include gen_mix.flex(null,row,5rem);
+      padding: 2rem 2rem;
+    }
+
+    a{
+      .card{
+        @include gen_mix.flex(center,column);
+        @include gen_mix.color_bgcolor(null,"general_color");
+        width: 17.5rem;
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        @include mq.responsive('sm')
+        {
+          transform: scale(1.2,1.2);
+        }
+        @include mq.responsive('lg')
+        {
+          transform: scale(0.95,0.95);
+        }
+  
+        img{
+          @include gen_mix.w_ratio(17.5rem,math.div(1250,1024));
+          border-top-left-radius: 1rem;
+          border-top-right-radius: 1rem;
+        }
+        h4{
+          @include gen_mix.color_bgcolor("black");
+          margin-top: 1.5rem;
+        }
+        p{
+          padding: 1rem 2rem;
+          text-align: center;
+          @include gen_mix.color_bgcolor("general_text");
+          @include gen_mix.font_sw(0.9rem);
+        }
+      }
+      .card:hover{
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.3), 
+                    -5px -5px 5px rgba(0,0,0,0.3);
+      }
+    }
+  } 
+}

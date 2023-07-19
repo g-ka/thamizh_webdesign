@@ -1,0 +1,105 @@
+@use "../variables" as var;
+
+// width, height:
+@mixin wh($width, $height: $width)
+{
+  width: $width;
+  height: $height;
+}
+
+// flex:
+@mixin flex($justify_content: space-between, $f_dir:row, $gap: null, $align_items: center)
+{
+  display: flex;
+  flex-direction: $f_dir;
+  justify-content: $justify_content;
+  align-items: $align_items;
+  @if $f_dir == row
+  {
+    column-gap: $gap;
+  }
+  @else
+  {
+    row-gap: $gap;
+  }
+}
+
+//inline-flex:
+@mixin iflex($justify_content: space-between, $f_dir:row, $gap: null, $align_items: center)
+{
+  display: inline-flex;
+  flex-direction: $f_dir;
+  justify-content: $justify_content;
+  align-items: $align_items;
+  @if $f_dir == row
+  {
+    column-gap: $gap;
+  }
+  @else
+  {
+    row-gap: $gap;
+  }
+}
+
+//color, background_color:
+@mixin color_bgcolor($color, $bg_color: null)
+{
+  color: map-get(var.$theme_colors, $color);
+  background-color: map-get(var.$theme_colors, $bg_color );
+}
+
+//font_size, font_weight:
+@mixin font_sw($font_size: 1rem, $font_weight: 400)
+{
+  font-size: $font_size;
+  font-weight: $font_weight;
+}
+@mixin font_ws($font_weight: 400, $font_size: null)
+{
+  font-size: $font_size;
+  font-weight: $font_weight;
+}
+
+// fade_in animation
+@mixin fade($time)
+{
+  animation: fade $time 1;
+
+  @keyframes fade{
+    from{opacity: 0;}
+    to{opacity: 1;}
+  }
+}
+
+// text_gradient
+@mixin text_gradient($color_1: rgb(random(255), random(255), random(255)), $color_2: rgb(random(255), random(255), random(255))) {
+  background: linear-gradient(to right, $color_1, $color_2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// mouse_icon
+@mixin mouse($cursor: pointer, $pointer_events: null)
+{
+  cursor: $cursor;
+  pointer-events: $pointer_events;
+}
+
+// position
+@mixin position($position, $z, $top, $right, $bottom: null, $left: null)
+{
+  position: $position;
+  z-index: $z;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// width, aspect-ratio
+@mixin w_ratio($width, $aspect_ratio)
+{
+  width: $width;
+  aspect-ratio: $aspect_ratio;
+}

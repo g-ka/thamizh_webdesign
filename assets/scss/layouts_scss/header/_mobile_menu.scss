@@ -1,0 +1,53 @@
+@use "../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../abstract_scss/mixins/header_mix/mobile_menu_mix" as mix;
+
+.mobile_menu{
+  @include mix.mobile_menu();
+
+  .close{
+    @include mix.close();
+  }
+
+  .menu{
+    @include mix.menu();
+
+    .styles{
+      @include mix.styles();
+
+      a{
+        @include gen_mix.color_bgcolor("general_color");     
+      }
+    }
+    .styles:hover{
+      @include mix.styles_hover();
+
+      a{
+        @include gen_mix.color_bgcolor("black");
+      }
+    }
+
+    @include mix.fade_in();
+    
+    .home_para{
+      @include mix.transition(0ms);
+    }
+    .about_para
+    {
+      @include mix.transition(200ms);
+    }
+    .roadmap_para
+    {
+      @include mix.transition(400ms);
+    }
+    .courses_para
+    {
+      @include mix.transition(600ms);
+    }
+    .contact_para
+    {
+      @include mix.transition(800ms);
+    }
+  }
+}
+
+

@@ -1,0 +1,88 @@
+@use "../../variables" as var;
+@use "../media_queries_mix" as mq;
+
+// .header
+@mixin header()
+{
+  padding: 1rem 11rem;
+  border-bottom: 0.01rem solid rgba(0,0,0,0.05);
+  //backdrop-filter: blur(2rem);
+  transition: all 0.4s;
+}
+
+// &__brand_name > 'xxs'(animation)
+@mixin spectrum_head()
+{
+  color: blue;
+  animation: spectrum 10s linear infinite;
+
+  @keyframes spectrum
+    {
+      0%{color: blue;}
+      33%{color: rgb(4, 188, 4);}
+      66%{color: red;}
+      100%{color: blue;}
+    }
+}
+
+// &__brand_name > h2
+@mixin h2()
+{
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+// &__brand_name > h2 > span(animation)
+@mixin spectrum()
+{
+  span{
+    font-family: var.$tamil_font;
+    color: blue;
+    animation: spectrum 10s linear infinite;
+    @include mq.responsive('xxs')
+    {
+      display: none;
+    }
+  }
+
+  @keyframes spectrum
+    {
+      0%{color: blue;}
+      33%{color: rgb(4, 188, 4);}
+      66%{color: red;}
+      100%{color: blue;}
+    }
+}
+
+// &__menu > ul > li
+@mixin li()
+{
+  margin-left: 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+// &__menu > ul > li > a
+@mixin a()
+{
+  transition: all 0.15s;
+}
+
+//.contact_us
+@mixin contact_us{
+  background-color: map-get(var.$theme_colors, "primary_light");
+  // padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+// .contact_us > a
+@mixin contact_a()
+{
+  display: inline-block;
+  text-align: center;
+  padding: 0.6rem 1.5rem;
+}

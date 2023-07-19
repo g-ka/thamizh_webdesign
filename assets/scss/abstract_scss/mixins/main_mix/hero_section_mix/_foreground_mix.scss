@@ -1,0 +1,27 @@
+@use "../../../variables" as var;
+
+// &__foreground
+@mixin foreground()
+{
+  padding: 6rem 10rem;
+}
+
+// .watch_it_free
+@mixin watch()
+{
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+//.learn_more
+@mixin learn()
+{
+  padding: 0.5rem 1.5rem;
+  border: 0.1rem solid map-get(var.$theme_colors, "primary_light");
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}

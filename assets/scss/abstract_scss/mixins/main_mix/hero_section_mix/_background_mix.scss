@@ -1,0 +1,49 @@
+// .hero_section
+@mixin background()
+{
+  position: relative;
+  z-index: 100;
+}
+
+//.bxl-...(postion top, right, bottom, left)
+@mixin tr($top, $right, $duration: null, $count: null)
+{
+  position: absolute;
+  top: $top;
+  right: $right;
+  z-index: 99;
+  cursor: pointer;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+}
+@mixin tl($top, $left, $duration: null, $count: null)
+{
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: 99;
+  cursor: pointer;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+}
+@mixin br($bottom, $right, $duration: null, $count: null)
+{
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+  z-index: 99;
+  cursor: pointer;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+}
+@mixin bl($bottom, $left, $duration: null, $count: null)
+{
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  z-index: 99;
+  cursor: pointer;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+}
+

@@ -1,0 +1,14 @@
+@use "base_scss/generic";
+
+@use "layouts_scss/header/header";
+@use "layouts_scss/header/mobile_menu";
+@use "layouts_scss/main/hero_section/general_hero_section";
+@use "layouts_scss/main/hero_section/background";
+@use "layouts_scss/main/hero_section/foreground";
+@use "layouts_scss/main/about_section/about_section.scss";
+@use "layouts_scss/main/roadmap_section/roadmap";
+@use "layouts_scss/main/courses_section/courses_section";
+@use "layouts_scss/main/contact_section/contact_section";
+@use "layouts_scss/footer/footer";
+
+@use "js_scss/navbar_hide";

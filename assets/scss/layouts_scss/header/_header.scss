@@ -1,0 +1,111 @@
+@use "../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../abstract_scss/mixins/header_mix/header_mix" as mix;
+@use "../../abstract_scss/mixins/media_queries_mix" as mq;
+
+.header{
+  @include gen_mix.flex(space-between,row,null);
+    @include mix.header();
+    @include gen_mix.fade(1s);
+    @include gen_mix.position(fixed, 101, 0, 0, null, 0);
+    @include gen_mix.color_bgcolor(null,"general_color");
+  
+  @include mq.responsive('xs')
+  {
+    @include gen_mix.flex(space-between,row,null);
+    padding: 1rem 2rem;
+  }
+  @include mq.responsive('sm')
+  {
+    @include gen_mix.flex(space-between,row,null);
+    padding: 1rem 2rem;
+  }
+  @include mq.responsive('xl')
+  {
+    @include gen_mix.flex(space-between,row,null);
+    @include mix.header();
+    @include gen_mix.fade(1s);
+    @include gen_mix.position(fixed, 101, 0, 0, null, 0);
+  }
+
+  &__brand_name{
+    h2{
+      @include mix.h2();
+    }
+
+    @include mq.responsive('xxs')
+    {
+      @include mix.spectrum_head();
+    }
+
+    //span style
+    @include mix.spectrum();
+  }
+
+  &__menu_icon{
+    i{
+      font-size: 1.5rem;
+      margin-top: 0.2rem;
+      cursor: pointer;
+      @include mq.responsive('xxs')
+      {
+        margin-top: 0.4rem;
+      }
+      @include mq.responsive('lg')
+      {
+        display: none;
+      }
+    }
+  }
+
+  &__menu{
+
+    @include mq.responsive('xs')
+      {
+        display: none;
+      }
+    @include mq.responsive('sm')
+    {
+      display: none;
+    }
+    @include mq.responsive('lg')
+    {
+      display: block;
+    }
+      
+    ul{
+      @include gen_mix.flex(null);
+
+      li{
+        @include mix.li();
+
+        a{
+          @include gen_mix.color_bgcolor("secondary_dark");
+          @include mix.a();
+        }
+        a:hover{
+          @include gen_mix.color_bgcolor("primary_light");
+        }
+      }
+
+      .on_action{
+        @include gen_mix.color_bgcolor("primary_light");
+      }
+
+      .contact_us{
+        @include mix.contact_us();
+
+        a{
+          @include gen_mix.color_bgcolor("general_color"); 
+          @include mix.contact_a();
+          @include gen_mix.wh(8.661rem,2.491rem);      
+        }
+        a:hover{
+          @include gen_mix.color_bgcolor("general_color");     
+        }
+      }
+      .contact_us:hover{
+        @include gen_mix.color_bgcolor(null, "primary_hover");     
+      }
+    }
+  }
+}

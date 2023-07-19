@@ -1,0 +1,74 @@
+// .mobile_menu
+@mixin mobile_menu()
+{
+  // display: none;
+}
+
+// .mobile_menu > .close
+@mixin close()
+{
+  font-size: 2.5rem;
+  position: fixed;
+  top: -5px;
+  right: -5px;
+  pointer-events: none;
+  // cursor: not-allowed;
+  opacity: 0;
+  transition: all 1s;
+  z-index: 102;
+}
+
+// .mobile_menu > .menu
+@mixin menu()
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  row-gap: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  z-index: 101;
+  transition: all 1s;
+}
+
+// .menu > .styles
+@mixin styles()
+{
+  font-size: 2rem;
+  font-family: sans-serif;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+// .menu > .styles:hover
+@mixin styles_hover()
+{
+  padding: 1rem 2rem;
+  background-color: white;
+  color: black;
+}
+
+// .hidden1 , .show1
+@mixin fade_in()
+{
+  .hidden1{
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  .show1{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// trasitions
+@mixin transition($delay)
+{
+  transition: opacity 0.3s $delay, transform 0.3s $delay, padding 0.2s, background-color 0.2s, color 0.2s;
+}

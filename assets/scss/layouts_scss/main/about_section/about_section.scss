@@ -1,0 +1,51 @@
+@use "../../../abstract_scss/mixins/main_mix/about_section_mix/about_mix" as mix;
+@use "../../../abstract_scss/mixins/generic_mix" as gen_mix;
+@use "../../../abstract_scss/mixins/media_queries_mix" as mq;
+
+.about_section{
+  @include gen_mix.color_bgcolor(null, "primary_light");
+  @include mix.about_section();
+
+  @include mq.responsive('xs')
+  {
+    @include gen_mix.flex(null,column,1.5rem);
+    padding: 4rem 1.5rem;
+  }
+  @include mq.responsive('sm')
+  {
+    @include gen_mix.flex(null,column,1.5rem);
+    padding: 4rem 1.8rem;
+  }
+  @include mq.responsive('lg')
+  {
+    @include gen_mix.flex(null,row,2.3rem);
+  }
+  @include mq.responsive('xl')
+  {
+    @include gen_mix.flex(null,row,4rem);
+    @include gen_mix.color_bgcolor(null, "primary_light");
+    @include mix.about_section();
+  }
+
+  &__img{
+    img{
+      @include gen_mix.wh(20rem);
+      @include mix.img();
+      @include mq.responsive('xs')
+      {
+        @include gen_mix.wh(16.5rem);
+      }
+    }
+  }
+  &__desc{
+    @include gen_mix.flex(null,column,2rem,null);
+    h2{
+      @include gen_mix.color_bgcolor("general_color");
+      @include gen_mix.font_sw(1.8rem, 600);
+    }
+    p{
+      @include gen_mix.color_bgcolor("general_text2");
+      @include mix.p();
+    }
+  }
+}

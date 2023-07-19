@@ -1,0 +1,28 @@
+@use "../abstract_scss/variables" as var;
+
+// poppins font(for english/primary)
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+// mukta malar font(for tamil)
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@300;400;500;600;700;800&display=swap');
+
+//global styles:
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var.$primary_font;
+}
+
+// html smooth scroll:
+html{
+  scroll-behavior: smooth;
+}
+
+//ul, a styles:
+ul{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
