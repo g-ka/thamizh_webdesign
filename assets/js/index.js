@@ -65,8 +65,7 @@ window.addEventListener('wheel', (event) =>
         //       }
         //     })
           document.querySelector('header').classList.add('header_adder');
-        })
-      })
+      });
 
       window.addEventListener('touchstart', () =>
       {
