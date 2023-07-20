@@ -97,7 +97,7 @@
         a{
           @include gen_mix.color_bgcolor("general_color"); 
           @include mix.contact_a();
-          @include gen_mix.wh(8.661rem,2.491rem);      
+          @include gen_mix.wh(9.023rem,2.491rem);      
         }
         a:hover{
           @include gen_mix.color_bgcolor("general_color");     
