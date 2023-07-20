@@ -18,6 +18,26 @@ window.addEventListener('wheel', (event) =>
     }
   })
 
+window.addEventListener('touchstart', () =>
+  {
+    if(window.pageYOffset >= 73)
+    {
+      let start = window.pageYOffset;
+      window.addEventListener('touchend', () =>
+      {
+        let end = window.pageYOffset;
+        if(start < end)
+        {
+          document.querySelector('header').classList.add('header_adder');
+        }
+        else
+        {
+          document.querySelector('header').classList.remove('header_adder');
+        }
+      })
+    }
+  })
+
 // hide nav_bar on dynamic scroll (and) color change of menu option
 
   let menu_links = document.querySelectorAll('.hide_nav');
