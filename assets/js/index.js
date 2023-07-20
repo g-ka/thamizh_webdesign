@@ -88,10 +88,10 @@ window.addEventListener('touchstart', () =>
           });
       });
 
-      window.addEventListener('touchstart', () =>
-      {
-        document.querySelector('header').classList.remove('header_adder');
-      });
+      // window.addEventListener('touchstart', () =>
+      // {
+      //   document.querySelector('header').classList.remove('header_adder');
+      // });
         
       document.querySelector('.home_para').addEventListener('click', (e) =>
       {
